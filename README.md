@@ -72,7 +72,7 @@ L'interface utilise les couleurs suivantes :
 - 🔴 Rouge : Erreurs et livres non disponibles
 - 🔵 Bleu : Bordures décoratives
 - 🟡 Jaune : Prompts et texte important
-- 🔶 Cyan : Titres et informations
+- 🔹 Cyan : Titres et informations
 
 ## Caractéristiques Techniques
 
