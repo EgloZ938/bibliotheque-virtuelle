@@ -11,6 +11,7 @@ Un système de gestion de bibliothèque en ligne de commande permettant d'achete
 - Affichage des détails d'un livre
 - Achat de livres
 - Lecture des livres achetés
+- Rendre un livre acheté
 
 ## ⚙️ Configuration
 
@@ -63,6 +64,7 @@ python bib.py
 - `5` : Afficher le détail d'un livre
 - `6` : Acheter un livre
 - `7` : Lire un livre
+- `8` : Rendre un livre
 - `q` : Quitter
 
 ## 🎨 Interface

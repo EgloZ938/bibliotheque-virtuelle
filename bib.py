@@ -174,6 +174,7 @@ class BookShop:
             "5": ("Afficher le détail d'un livre", self.__show_book_details),
             "6": ("Acheter un livre", self.__buy_book),
             "7": ("Lire un livre", self.__read_book),
+            "8": ("Retourner un livre", self.__return_book),
             "q": ("Quitter", None)
         }
 
@@ -368,6 +369,30 @@ class BookShop:
         except ValueError:
             print(f"\n{Fore.RED}ID invalide{Style.RESET_ALL}")
             time.sleep(2)
+
+    def __return_book(self):
+        """
+        Gère le retour d'un livre acheté.
+        Vérifie que le livre existe et a été acheté avant d'autoriser le retour.
+        """
+        self.clear_screen()
+        self.print_header("RETOUR D'UN LIVRE")
+        
+        try:
+            book_id = int(input(f"{Fore.YELLOW}ID du livre à retourner: {Style.RESET_ALL}"))
+            book = self.__lib.get_book(book_id)
+            if book:
+                if not book.available:  # Vérifie si le livre a été acheté
+                    book.set_availability(True)
+                    print(f"\n{Fore.GREEN}Livre retourné avec succès{Style.RESET_ALL}")
+                else:
+                    print(f"\n{Fore.RED}Ce livre n'a pas été acheté{Style.RESET_ALL}")
+            else:
+                print(f"\n{Fore.RED}Livre non trouvé{Style.RESET_ALL}")
+        except ValueError:
+            print(f"\n{Fore.RED}ID invalide{Style.RESET_ALL}")
+        
+        time.sleep(2)
 
 # Point d'entrée du programme
 if __name__ == '__main__':
